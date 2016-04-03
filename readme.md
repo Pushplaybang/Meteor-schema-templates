@@ -24,7 +24,7 @@ meteor add pushplaybang:schematemplates
 
 
 ## Getting Started
-includde the package, as well as the collection2 package. (You may have issues if you're not using the accounts package when included related schema templates)
+includ the package, as well as the collection2 package. (You may have issues if you're not using the accounts package when included related schema templates)
 
 ```bash
 meteor add aldeed:collection2
@@ -34,7 +34,7 @@ meteor add nona:schematemplate
 
 
 ### CreatdAt date
-includes a timestamp for when the document was created.
+automatically includes a timestamp for when the document was created.
 
 ```js
 someSchema = new SimpleSchema([
@@ -52,7 +52,7 @@ produces a field like this :
 
 
 ### UpdatedAt date
-includes a timestamp for when the document was last updated
+Automatically includes a timestamp for when the document was last updated
 
 ```js
 someSchema = new SimpleSchema([
@@ -70,7 +70,7 @@ produces a field like this :
 
 
 ### CreatedBy userId
-includes the userId of the user who created the document
+Automatically includes the userId of the user who created the document
 ```js
 someSchema = new SimpleSchema([
   //...
@@ -87,7 +87,7 @@ produces a field like this :
 
 
 ### UpdatedBy userId
-includes the userId of the user who last updated the document
+Automatically includes the userId of the user who last updated the document
 
 ```js
 someSchema = new SimpleSchema([
@@ -105,16 +105,16 @@ produces a field like this :
 
 
 ### history
-includes a history of changes, as an array of sub documents on the document being changed. This is configurable, allowing you to define which operations are recorded, include custom messages for each, as well as for which operations (such as `$push`) history is recorded.
+Automatically includes a history of changes, as an array of sub documents on the document being changed. This is configurable, allowing you to define which operations are recorded, include custom messages for each, as well as for which operations (such as `$push`) history is recorded.
 
-This is only a good strategy for infrequent changes to a document, good examples may be the editing of a blog post, page template, issue ticket etc, where the array of history sub documents would not explode in size.  For more frequent activity, or history and separate collection should be used.
+This is only a good strategy for infrequent changes to a document, good examples may be the editing of a blog post, page template, issue ticket etc, where the array of history sub documents would not explode in size.  For more frequent activity, or 'history', a separate collection should be used.
 
 Each history sub document includes a date and a content object.  The content object contains the userId of the user who performed the action, and an object for each allowed field that was changed, includig the value it was changed to and the custom defined message.
 
 Setup history in the following manner : 
 
 ```js
-// define your  in a file scoped obj
+// define your config in a file scoped obj
 var history = {
   // Specify the fields you care about recording activity on.
   fields : ['title', 'description', 'forTopic', 'againstTopic', 'closed'],
