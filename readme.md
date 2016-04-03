@@ -258,6 +258,8 @@ App.Collections.Topics.attachSchema(App.Schema.TopicSchema);
 ```
 
 
+### Contributions and Suggestions Welcome!
+Have something you think this needs or could use as an improvement?  Let me know.  add [an issue on github](https://github.com/Pushplaybang/Meteor-schema-templates) or fork and create a pull request.
 
 
 ____
