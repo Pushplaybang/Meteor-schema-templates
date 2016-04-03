@@ -2,7 +2,7 @@
 Package.describe({
   name: 'pushplaybang:schematemplates',
   version: '0.0.1',
-  summary: 'This provides prebuilt re-usable autovalue schema templates to be used with the meteor aldeed:collection2 package',
+  summary: 're-usable autovalue schema templates for meteor aldeed:collection2',
   git: 'https://github.com/Pushplaybang/Meteor-schema-templates',
   documentation: 'readme.md',
 });
