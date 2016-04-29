@@ -1,0 +1,18 @@
+{
+  "parser": "babel-eslint",
+  // ES6 Linting
+  // "extends": "airbnb",
+  // ES5 linting - can only use one or the other
+  "extends": "airbnb/legacy",
+  "env": {
+    "browser": true,
+    "node": true,
+  },
+  "rules": {
+    "no-unused-vars": 0,
+    "no-undef": 0,
+    "space-before-function-paren": 0,
+    "func-names": 0,
+    "comma-dangle": 0,
+  }
+}
