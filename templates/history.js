@@ -1,3 +1,5 @@
+import SimpleSchema from 'simpl-schema';
+
 SchemaTemplate.history = function(history) {
   if (!history || !history.fields || !history.messages)
     return false;
@@ -9,7 +11,7 @@ SchemaTemplate.history = function(history) {
     history: {
       type: [Object],
       optional: true,
-      autoValue: function() {
+      autoValue() {
         var content = {}, i = fields.length, element, field, val, state;
 
         while (i--) {
@@ -56,9 +58,9 @@ SchemaTemplate.history = function(history) {
         if (content) {
           if (this.isInsert) {
             return [{
-                date: new Date(),
-                content: content
-              }];
+              date: new Date(),
+              content: content
+            }];
           } else {
             return {
               $push: {

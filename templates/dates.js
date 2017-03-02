@@ -1,7 +1,9 @@
+import SimpleSchema from 'simpl-schema';
+
 SchemaTemplate.createdAt = new SimpleSchema({
   createdAt: {
     type: Date,
-    autoValue: function() {
+    autoValue() {
       if (this.isInsert) {
         return new Date();
       } else if (this.isUpsert) {
@@ -16,7 +18,7 @@ SchemaTemplate.createdAt = new SimpleSchema({
 SchemaTemplate.updatedAt = new SimpleSchema({
   updatedAt: {
     type: Date,
-    autoValue: function() {
+    autoValue() {
       if (this.isUpdate || this.isUpsert) {
         return new Date();
       }
